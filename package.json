@@ -18,7 +18,9 @@
   "scripts": {
     "dev": "grunt monitor",
     "test": "grunt travis",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "lint-staged": {
     "js/*.js": [
@@ -26,12 +28,14 @@
       "git add"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "snyk": "^1.297.2"
+  },
   "engine": "node >= 6",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.4",
     "grunt-babel": "^6.0.0",
     "grunt-banner": "^0.6.0",
     "grunt-browser-sync": "^2.2.0",
@@ -40,7 +44,7 @@
     "grunt-contrib-compress": "^1.4.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-jade": "^1.0.0",
-    "grunt-contrib-jasmine": "^1.1.0",
+    "grunt-contrib-jasmine": "^2.0.3",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-notify": "^0.4.5",
@@ -50,13 +54,13 @@
     "grunt-sass": "^2.0.0",
     "grunt-text-replace": "^0.4.0",
     "husky": "^0.14.3",
-    "jasmine": "^2.6.0",
+    "jasmine": "^3.1.0",
     "jasmine-jquery": "^2.1.1",
-    "jquery": "^3.2.1",
-    "lint-staged": "^7.0.4",
+    "jquery": "^3.4.0",
+    "lint-staged": "^7.1.3",
     "node-archiver": "^0.3.0",
-    "node-sass": "^4.7.2",
-    "phantomjs-prebuilt": "^2.1.14",
+    "node-sass": "^4.13.1",
+    "phantomjs-prebuilt": "^2.1.16",
     "prettier": "^1.12.1"
   },
   "files": [
@@ -66,5 +70,6 @@
     "sass/**/*.scss",
     "Gruntfile.js",
     "LICENSE"
-  ]
+  ],
+  "snyk": true
 }
